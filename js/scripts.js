@@ -1,10 +1,18 @@
 var sentence = prompt("Please enter a sentence.");
-//alert(sentence);
-console.log(sentence);
 
+function joinAndUppercase(a,b) {
+  return a.concat(b).toUpperCase();
+};
 
-var firstLetter=sentence.charAt(0);
-var lastLetter=sentence.charAt(sentence.length -1);
-var firstAndLast=firstLetter.concat(lastLetter);
-var capitalizedFirstAndLast=firstAndLast.toUpperCase();
-//alert(capitalizedFirstAndLast);
+function reverse(ab) {
+  return ab.charAt(1).concat(ab.charAt(0));
+}
+
+function joinUppercaseAndReverse(a,b) {
+  var capitalizedFirstAndLast = joinAndUppercase(a,b);
+  return reverse(capitalizedFirstAndLast);
+}
+
+var firstLetter = sentence.charAt(0);
+var lastLetter = sentence.charAt(sentence.length -1);
+alert(joinUppercaseAndReverse(firstLetter,lastLetter));
